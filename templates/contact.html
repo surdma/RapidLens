@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+			<main class="main-content">
+				<div class="container">
+					<div class="breadcrumb">
+						<a href="{% url 'weather:index' %}">Home</a>
+						<span>Contact</span>
+					</div>
+				</div>
+
+
+				<div class="fullwidth-block">
+					<div class="container">
+						<div class="col-md-5">
+							<div class="contact-details">
+								<div class="map" data-latitude="-6.897789" data-longitude="107.621735"></div>
+								<div class="contact-info">
+									<address>
+										<img src="{% static "images/icon-marker.png" %}" alt="">
+										<p>OLASURD Inc. <br>
+										Bosso, Minna, Niger State</p>
+									</address>
+									
+									<a href="#"><img src="{% static "images/icon-phone.png" %}" alt="">+2349063305132</a>
+									<a href="#"><img src="{% static "images/icon-envelope.png" %}" alt="">olasurda@yahoo.com</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-md-offset-1">
+							<h2 class="section-title">Contact us</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consectetur inventore ducimus, facilis, numquam id soluta omnis eius recusandae nesciunt vero repellat harum cum. Nisi facilis odit hic, ipsum sed!</p>
+							<form action="#" class="contact-form">
+								<div class="row">
+									<div class="col-md-6"><input type="text" placeholder="Your name..."></div>
+									<div class="col-md-6"><input type="email" placeholder="Email Addresss..."></div>
+								</div>
+								<!--
+								<div class="row">
+									<div class="col-md-6"><input type="text" placeholder="Company name..."></div>
+									<div class="col-md-6"><input type="text" placeholder="Website..."></div>
+								</div>
+								-->
+								<textarea name="" placeholder="Message..."></textarea>
+								<div class="text-right">
+									<input type="submit" placeholder="Send message">
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</main> <!-- .main-content -->
+				
+{% endblock %}

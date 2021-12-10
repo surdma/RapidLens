@@ -1,0 +1,40 @@
+{% extends "sidebar.html" %}
+{% load static %}
+			
+{% block content %}	
+			<main class="main-content">
+				<div class="container">
+					<div class="breadcrumb">
+						<a href="{% url 'weather:index' %}">Home</a>
+						<a href="{% url 'weather:news' %}">News</a>
+						<span> {{ details.title }} </span>
+					</div>
+				</div>			
+{% endblock %}
+
+
+{% block news %}
+
+<div class="fullwidth-block">
+		<div class="container">
+			<div class="row">
+				<div class="content col-md-8">
+				{% autoescape off %}
+					<div class="post single">
+						<h2 class="entry-title">{{ details.title }}</h2>
+						<div class="featured-image"><img src="{% static 'images/featured-image-1.jpg' %}" alt=""></div>
+									
+						<div class="entry-content">
+							{{ details.content }}
+						</div>
+				{% endautoescape %}
+					</div>
+
+				
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

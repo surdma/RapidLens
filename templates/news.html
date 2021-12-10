@@ -1,0 +1,31 @@
+{% extends "sidebar.html" %}
+{% load static %}
+			
+{% block content %}		
+
+			<main class="main-content">
+				<div class="container">
+					<div class="breadcrumb">
+						<a href="{% url 'weather:index' %}">Home</a>
+						<span>News</span>
+					</div>
+				</div>
+		
+{% endblock %}	
+
+{% block news %}
+{% autoescape off %}
+	{% for post in posts %}
+		<div class="post">
+			<h2 class="entry-title">{{ post.title }}</h2>
+			{% if post.featured_image %}
+			<div class="featured-image"><img src="{{ post.featured_image.url }}" width=50x height=50px alt=""></div>
+			{% else %}
+			<div class="featured-image"><img src="{% static 'images/featured-image-1.jpg' %}" width=50x height=50px alt=""></div>
+			{% endif %}
+			<p>{{ post.content | truncatewords:100 | linebreaks }}</p>
+			<a a href="{{ post.get_absolute_url }}" class="button">Read more</a>
+		</div>
+	{% endfor %}
+{% endautoescape %}
+{% endblock %}
