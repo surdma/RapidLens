@@ -4,7 +4,7 @@ import json
 from geopy.geocoders import Nominatim
 from datetime import date, timedelta
 from .models import Post,Category
-
+from decouple import config
 # Create your views here.
 
 def index(request):
@@ -13,7 +13,8 @@ def index(request):
 
 	todays_date = date.today()
 
-	API_key = 'fe630c653cc821cac7e40242262840a0'
+	API_key = config('API_key')
+
 	lat = str(locator.latitude)
 	lon = str(locator.longitude)
 	location = locator.address
